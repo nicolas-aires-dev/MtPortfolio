@@ -2,52 +2,61 @@ import { styled, Grid, Container, Typography } from "@mui/material"
 import Avatar from "../../../../assets/images/Avatar.png"
 import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import MailRoundedIcon from '@mui/icons-material/MailRounded';
+import StyledButton from "../../../../components/StyledButton/StyledButton";
+import "../../../../components/AnimatedBackground/animated-background.css";
+
 
 const Hero = () => {
 
-    const StyledHero = styled("div")(()=> ({
-        backgroundColor: "black",
-        height: "100vh"
-
+    const StyledHero = styled("div")(( {theme} )=> ({
+        backgroundColor: theme.palette.primary.main,
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        position: "relative",
+        isolation: "isolate",
     }))
 
-    const StyledImg = styled("img")(()=> ({
-        width:"100%",
-        borderRadius: "50%"
+    const StyledImg = styled("img")(({theme})=> ({
+        width:"80%",
+        borderRadius: "50%",
+        border: `1px solid ${theme.palette.primary.contrastText}`
     }))
 
   return (
     <>
-        <StyledHero>
-            <Container>
-
+        <StyledHero className="animated-background">
+            <Container maxWidth="lg">
+                <div className="bg" />
                 <Grid container spacing={2}>
+                    <Grid size={{ xs:12, md: 5 }}>
 
-                    <Grid size={{ xs:12, md: 4 }}>
                         <StyledImg src={Avatar} />
                     </Grid>
-
-                    <Grid size={{ xs: 12, md: 8 }}>
-                        <Typography color="primary" variant="h1" sx={{ textAlign: "center" }}>Nícolas Aires</Typography>
-                        <Typography color="primary" variant="h3" sx={{ textAlign: "center" }}>Solução de problemas, usando tecnologia.</Typography>
-                        <Grid container sx={{ display: "flex", justifyContent: "center" }}>
+                    <Grid size={{ xs: 12, md: 7 }}>
+                        <Typography variant="h1" sx={{ textAlign: "center", color:"secondary.contrastText" }}>Nícolas Aires</Typography>
+                        <Typography variant="h4" sx={{ textAlign: "center", color:"primary.contrastText" }}>Solução de problemas, usando tecnologia.</Typography>
+                        <Grid container sx={{ display: "flex", justifyContent: "center" }} spacing={3}>
                             <Grid size={{ xs: 12, md:4 }} sx={{ display: "flex", justifyContent: "center" }}>
-                                <button>
+                                <StyledButton>
                                     <DownloadRoundedIcon/>
-                                    Baixar Curriculo</button>
+                                        <Typography>
+                                            Baixar CV
+                                        </Typography>
+                                </StyledButton>
                             </Grid>
                             <Grid size={{ xs: 12, md:4 }} sx={{ display: "flex", justifyContent: "center" }}>
-                                <button>
+                                <StyledButton>
                                     <MailRoundedIcon/>
-                                    Contato</button>
+                                        <Typography>
+                                            Contato
+                                        </Typography>
+                                </StyledButton>
                                 </Grid>
                             </Grid>
-                        </Grid>
-
+                    </Grid>
                 </Grid>
-
             </Container>
-
         </StyledHero>
     </>
   )
