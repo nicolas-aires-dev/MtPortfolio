@@ -20,7 +20,10 @@ const StyledButton: React.FC<StyledButtonProps> = ({children}) => {
         gap: "10px",
         transition: "all 0.2s ease-in-out",
         '&:hover':{
-            backgroundColor: theme.palette.secondary.main
+            backgroundColor: theme.palette.secondary.main,
+            color: theme.palette.secondary.dark,
+            cursor: "pointer",
+
         }
 
 

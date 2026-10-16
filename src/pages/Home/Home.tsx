@@ -1,11 +1,12 @@
 import Hero from "./sections/Hero/Hero"
+import Navbar from "../../components/navbar/navbar"
 
 const Home = () => {
 
   return (
     <>
-      
-      <Hero />
+      <Navbar/>
+      <Hero/>
     </>
   )
 }
