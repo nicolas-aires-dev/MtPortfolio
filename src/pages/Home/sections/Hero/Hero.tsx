@@ -33,10 +33,10 @@ const Hero = () => {
 
                         <StyledImg src={Avatar} />
                     </Grid>
-                    <Grid size={{ xs: 12, md: 7 }}>
-                        <Typography variant="h1" sx={{ textAlign: "center", color:"white" }}>Nícolas Aires</Typography>
-                        <Typography variant="h4" sx={{ textAlign: "center", color:"white" }}>Solução de problemas, usando tecnologia.</Typography>
-                        <Grid container sx={{ display: "flex", justifyContent: "center", padding:"25px 0px 25px 0px" }} spacing={3}>
+                    <Grid size={{ xs: 12, md: 7 }} >
+                        <Typography variant="h1" sx={{ textAlign: "center", color:"white", pb:2}}>Nícolas Aires</Typography>
+                        <Typography variant="h4" sx={{ textAlign: "center", color:"white" }}>"Solução de problemas, com tecnologia."</Typography>
+                        <Grid container sx={{ display: "flex", justifyContent: "center", pt:5 }} spacing={3}>
                             <Grid size={{ xs: 12, md:4 }} sx={{ display: "flex", justifyContent: "center" }}>
                                 <StyledButton>
                                     <DownloadRoundedIcon/>
