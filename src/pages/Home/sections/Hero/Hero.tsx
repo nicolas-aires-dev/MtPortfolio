@@ -4,6 +4,7 @@ import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import MailRoundedIcon from '@mui/icons-material/MailRounded';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import "../../../../components/AnimatedBackground/animated-background.css";
+import CV from "../../../../assets/pdfs/Nicolas_Aires_Curriculo_Tech_Proccess.pdf"
 
 
 const Hero = () => {
@@ -16,6 +17,20 @@ const Hero = () => {
         position: "relative",
         isolation: "isolate",
     }))
+
+const handleDownload = () => {
+    console.log("download")
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = CV
+    link.download = "Nicolas_Aires_Curriculo_Tech_Proccess.pdf";
+    // Append the link to the body
+    document.body.appendChild(link);
+    // Trigger the click event
+    link.click();
+    // Remove the link from the body
+    document.body.removeChild(link);
+};
 
     const StyledImg = styled("img")(({theme})=> ({
         width:"80%",
@@ -38,15 +53,15 @@ const Hero = () => {
                         <Typography variant="h4" sx={{ textAlign: "center", color:"white" }}>"Solução de problemas, com tecnologia."</Typography>
                         <Grid container sx={{ display: "flex", justifyContent: "center", pt:5 }} spacing={3}>
                             <Grid size={{ xs: 12, md:4 }} sx={{ display: "flex", justifyContent: "center" }}>
-                                <StyledButton>
+                                <StyledButton onClick={() => handleDownload()}>
                                     <DownloadRoundedIcon/>
                                         <Typography>
                                             Baixar CV
                                         </Typography>
-                                </StyledButton>
+                                </StyledButton >
                             </Grid>
                             <Grid size={{ xs: 12, md:4 }} sx={{ display: "flex", justifyContent: "center" }}>
-                                <StyledButton>
+                                <StyledButton onClick={() => console.log("Contact")}>
                                     <MailRoundedIcon/>
                                         <Typography>
                                             Contato
