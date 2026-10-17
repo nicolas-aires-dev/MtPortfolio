@@ -24,13 +24,29 @@ const handleDownload = () => {
     const link = document.createElement('a');
     link.href = CV
     link.download = "Nicolas_Aires_Curriculo_Tech_Proccess.pdf";
-    // Append the link to the body
+    // Append the link to the body.
     document.body.appendChild(link);
-    // Trigger the click event
+    // Trigger the click event.
     link.click();
-    // Remove the link from the body
+    // Remove the link from the body.
     document.body.removeChild(link);
 };
+
+
+const handledEmail = () => {
+    const emailAddress = "ni_colasaires@hotmail.com";
+    const subject = "Contato via portfólio";
+    const body = "Olá! Vi seu portfólio e...";
+
+    const outlookUrl =
+        `https://outlook.live.com/mail/0/deeplink/compose` +
+        `?to=${encodeURIComponent(emailAddress)}` +
+        `&subject=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+
+    window.open(outlookUrl, "_blank", "noopener,noreferrer");
+};
+
 
     const StyledImg = styled("img")(({theme})=> ({
         width:"80%",
@@ -61,7 +77,7 @@ const handleDownload = () => {
                                 </StyledButton >
                             </Grid>
                             <Grid size={{ xs: 12, md:4 }} sx={{ display: "flex", justifyContent: "center" }}>
-                                <StyledButton onClick={() => console.log("Contact")}>
+                                <StyledButton onClick={() => handledEmail()}>
                                     <MailRoundedIcon/>
                                         <Typography>
                                             Contato
