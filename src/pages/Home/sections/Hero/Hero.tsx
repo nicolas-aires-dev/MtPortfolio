@@ -4,10 +4,10 @@ import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import MailRoundedIcon from '@mui/icons-material/MailRounded';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import "../../../../components/AnimatedBackground/animated-background.css";
-import CV from "../../../../assets/pdfs/Nicolas_Aires_Curriculo_Tech_Proccess.pdf"
+import CV from "../../../../assets/pdfs/Nicolas_Aires_Tech_Process_20-10-2026.pdf"
 
 
-const Hero = () => {
+const HeroSection = () => {
 
     const StyledHero = styled("div")(( {theme} )=> ({
         backgroundColor: theme.palette.primary.main,
@@ -23,7 +23,7 @@ const handleDownload = () => {
     // Create a link element
     const link = document.createElement('a');
     link.href = CV
-    link.download = "Nicolas_Aires_Curriculo_Tech_Proccess.pdf";
+    link.download = "Nicolas_Aires_Tech_Process_20-10-2026.pdf";
     // Append the link to the body.
     document.body.appendChild(link);
     // Trigger the click event.
@@ -93,4 +93,4 @@ const handledEmail = () => {
   )
 }
 
-export default Hero
+export default HeroSection
