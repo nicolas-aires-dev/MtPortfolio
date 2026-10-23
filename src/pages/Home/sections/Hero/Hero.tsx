@@ -8,15 +8,37 @@ import CV from "../../../../assets/pdfs/Nicolas_Aires_Tech_Process_20-10-2026.pd
 
 
 const HeroSection = () => {
+    
+    const StyledImg = styled("img")(({theme})=> ({
+        width: "80%",
+        border: `1px solid ${theme.palette.secondary.main}`,
+        borderRadius: "50%",
+        position: "relative"
+    }))
 
-    const StyledHero = styled("div")(( {theme} )=> ({
+    const StyledHero = styled("div")(({ theme }) => ({
         backgroundColor: theme.palette.primary.main,
-        height: "100vh",
+        minHeight: "100vh",
         display: "flex",
         alignItems: "center",
         position: "relative",
         isolation: "isolate",
-    }))
+        width: "100%",
+        boxSizing: "border-box",
+
+        [theme.breakpoints.down("md")]: {
+            display: "block",
+            padding: "100px 20px 40px",
+            height: "auto",
+            minHeight: "100vh",
+        },
+
+        [theme.breakpoints.up("md")]: {
+            display: "flex",
+            alignItems: "center",
+            height: "100vh",
+        },
+    }));
 
 const handleDownload = () => {
     console.log("download")
@@ -32,7 +54,6 @@ const handleDownload = () => {
     document.body.removeChild(link);
 };
 
-
 const handledEmail = () => {
     const emailAddress = "ni_colasaires@hotmail.com";
     const subject = "Contato via portfólio";
@@ -46,13 +67,6 @@ const handledEmail = () => {
 
     window.open(outlookUrl, "_blank", "noopener,noreferrer");
 };
-
-
-    const StyledImg = styled("img")(({theme})=> ({
-        width:"80%",
-        borderRadius: "50%",
-        border: `1px solid ${theme.palette.secondary.main}`,
-    }))
 
   return (
     <>
