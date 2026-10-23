@@ -8,7 +8,6 @@ const AboutSection: React.FC = () => {
     const StyledAbout = styled("div")(( {theme} ) => ({
         backgroundColor: theme.palette.secondary.main,
         height: "100%",
-        marginBottom: "30px"
     }))
 
     const StyledCard = styled(Card)(({ theme }) => ({
@@ -91,8 +90,8 @@ const AboutSection: React.FC = () => {
                     <Box id="skills" sx={{ pt:1, mb:3 }}>
                         <Typography sx={{ variant:"h3", textAlign:"center", fontWeight:300 }}>Skills</Typography>
                     </Box>
-                    <Box sx= {{mb:5}}>
-                        <Grid container sx={{ spacing:3, justifyContent:"center" }}>
+                    <Box sx= {{ pb:3 }}>
+                        <Grid container spacing={3} sx={{  justifyContent: "center" }}>
                             {skillsSet.map((skill, index) => (
                                 <Grid key={index} size={{ xs: 5, sm: 4, md: 2, lg: 2 }}>
                                     <StyledCard variant="outlined">
